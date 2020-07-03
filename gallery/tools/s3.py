@@ -29,6 +29,7 @@ def create_bucket(bucket_name, region=None):
         return False
     return True
 
+
 def put_object(bucket_name, key, value):
     try:
         s3_client = boto3.client('s3')
@@ -38,6 +39,7 @@ def put_object(bucket_name, key, value):
         return False
     return True
 
+
 def get_object(bucket_name, key):
     try:
         s3_client = boto3.client('s3')
@@ -46,13 +48,13 @@ def get_object(bucket_name, key):
         logging.error(e)
         return None
     return result
-    
+
 
 def main():
-    #create_bucket('edu.au.cc.image-gallery','us-east-2')
-    put_object('edu.au.cc.image-gallery', 'banana', 'green')
-    print(get_object('edu.au.cc.image-gallery', 'banana')['Body'].read())
+    # create_bucket('edu.au.cc.image-gallery','us-east-2')
+    #put_object('edu.au.cc.image-gallery', 'banana', 'green')
+    #print(get_object('edu.au.cc.image-gallery', 'banana')['Body'].read())
+
 
 if __name__ == '__main__':
     main()
-
