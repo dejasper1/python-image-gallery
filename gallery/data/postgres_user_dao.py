@@ -1,6 +1,6 @@
-from user_dao import UserDAO
-from user import User
-from gallery.data import db
+from .user_dao import UserDAO
+from .user import User
+from . import db
 
 
 class PostgresUserDAO(UserDAO):

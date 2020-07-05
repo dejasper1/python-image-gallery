@@ -1,16 +1,17 @@
 from flask import Flask
 from flask import session, redirect, url_for, request
 from flask import render_template
-from gallery.data.user import User
-from gallery.data.db import connect
-from gallery.data.postgres_user_dao import PostgresUserDAO
-from gallery.tools.secrets import get_secret_flask_session
 from functools import wraps
+from ..data.user import User
+from ..data.db import connect
+from ..data.postgres_user_dao import PostgresUserDAO
+from ..data.secrets import get_secret_flask_session
+
 
 
 app = Flask(__name__)
 # Set the secret key to some random bytes. Keep this really secret!
-app.secret_key = get_secret_flask_session()["secret_key"]
+app.secret_key = get_secret_flask_session()
 # database connection
 connect()
 

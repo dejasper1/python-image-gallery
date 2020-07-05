@@ -1,13 +1,13 @@
 import psycopg2
 import json
-from secrets import get_secret_image_gallery
+import secrets
 
 # replaces previous db_host, name, user, et
 connection = None
 
 
 def get_secret():
-    jsonString = get_secret_image_gallery()
+    jsonString = secrets.get_secret_image_gallery()
     return json.loads(jsonString)
 
 
